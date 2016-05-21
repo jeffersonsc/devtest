@@ -6,6 +6,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'rspec-sidekiq'
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -65,5 +66,20 @@ RSpec.configure do |config|
     # Warn when jobs are not enqueued to Redis but to a job array
     config.warn_when_jobs_not_processed_by_sidekiq = true # default => true
   end
+
+  Shoulda::Matchers.configure do |config|
+    config.integrate do |with|
+      # Choose a test framework:
+      with.test_framework :rspec
+
+      # Choose one or more libraries:
+      with.library :active_record
+      with.library :active_model
+      with.library :action_controller
+      # Or, choose the following (which implies all of the above):
+      with.library :rails
+    end
+  end
+
 
 end

@@ -1,6 +1,8 @@
 class TwitterUser < ActiveRecord::Base
 	has_many :occurrences, dependent: :destroy
 
+	validates_presence_of :name, :screen_name, :twitter_id
+
 
 	#This method of create ou update twitter user
 	def self.create_or_update_twitter_user(user)

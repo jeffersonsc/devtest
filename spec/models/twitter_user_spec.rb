@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe TwitterUser, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "Validate attributes" do
+  	it {should validate_presence_of(:name)}
+  	it {should validate_presence_of(:screen_name)}
+  	it {should validate_presence_of(:twitter_id)}
+  end
 end
