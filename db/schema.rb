@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20160521175032) do
     t.integer  "twitter_user_id"
     t.integer  "tweet_id"
     t.string   "content"
-    t.integer  "retweets_count",   default: 0
-    t.integer  "favorites_count",  default: 0
+    t.integer  "retweet_count",    default: 0
+    t.integer  "favourites_count", default: 0
     t.datetime "tweet_created_at"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false

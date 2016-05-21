@@ -4,8 +4,8 @@ class CreateOccurrences < ActiveRecord::Migration
       t.references :twitter_user, index: true, foreign_key: true
       t.integer :tweet_id
       t.string :content
-      t.integer :retweets_count, default: 0
-      t.integer :favorites_count, default: 0
+      t.integer :retweet_count, default: 0
+      t.integer :favourites_count, default: 0
       t.timestamp :tweet_created_at
 
       t.timestamps null: false
