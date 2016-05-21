@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20160521175032) do
 
   create_table "occurrences", force: :cascade do |t|
     t.integer  "twitter_user_id"
+    t.integer  "tweet_id"
     t.string   "content"
     t.integer  "retweets_count",   default: 0
     t.integer  "favorites_count",  default: 0
