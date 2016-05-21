@@ -5,6 +5,7 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+require 'rspec-sidekiq'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -54,4 +55,15 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  RSpec::Sidekiq.configure do |config|
+    # Clears all job queues before each example
+    config.clear_all_enqueued_jobs = true # default => true
+
+    # Whether to use terminal colours when outputting messages
+    config.enable_terminal_colours = true # default => true
+
+    # Warn when jobs are not enqueued to Redis but to a job array
+    config.warn_when_jobs_not_processed_by_sidekiq = true # default => true
+  end
+
 end

@@ -20,8 +20,6 @@ class SynchronizeApiWorker
 				#Set user in user
 				user = TwitterUser.create_or_update_twitter_user(status[:user])
 				if user.persisted?
-					puts "User saved successful"
-
 					#Create occurrences for user
 					Occurrence.where(tweet_id: status[:id_str]).first_or_initialize do |occurrence|
 						occurrence.twitter_user = user
@@ -35,9 +33,6 @@ class SynchronizeApiWorker
 					end			
 				end				
 			end
-		end
-
-		puts "===========>>>>>>>>> Resultados #{TwitterUser.count} usuarios, #{Occurrence.count} ocorreências."		
-		
+		end		
 	end	
 end
