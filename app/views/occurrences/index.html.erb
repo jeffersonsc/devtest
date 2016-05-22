@@ -1,28 +1,28 @@
-<h1>Ocorreências</h1>
+<h1>Ocorrências</h1>
 
-<p>
-	<table>
-		<thead>
+
+<table class="table table-strip">
+	<thead>
+		<tr>
+			<th>Usuário</th>
+			<th>Seguidores</th>
+			<th>Mensagem</th>
+			<th>Horário</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @occurrences.each do |occurrence| %>
 			<tr>
-				<th>Usuário</th>
-				<th>Seguidores</th>
-				<th>Mensagem</th>
-				<th>Horário</th>
-				<th></th>
+				<td title="<%= occurrence.twitter_user.name %>"><%= link_to occurrence.twitter_user.screen_name , twitter_link(occurrence.twitter_user.screen_name), target: '_blank' %></td>
+				<td><%= occurrence.twitter_user.followers %></td>
+				<td><%= occurrence.content %></td>
+				<td><%= link_to t(occurrence.tweet_created_at, :long), tweet_link(occurrence.twitter_user.screen_name, occurrence.tweet_id), target: '_blank' %></td>
+				<td><%= link_to "Detalhes", occurrence %></td>
 			</tr>
-		</thead>
-		<tbody>
-			<% @occurrences.each do |occurrence| %>
-				<tr>
-					<td title="<%= occurrence.twitter_user.name %>"><%= link_to occurrence.twitter_user.screen_name , twitter_link(occurrence.twitter_user.screen_name), target: '_blank' %></td>
-					<td><%= occurrence.twitter_user.followers %></td>
-					<td><%= occurrence.content %></td>
-					<td><%= link_to t(occurrence.tweet_created_at, :long), tweet_link(occurrence.twitter_user.screen_name, occurrence.tweet_id), target: '_blank' %></td>
-					<td><%= link_to "Detalhes", occurrence %></td>
-				</tr>
-			<% end -%>
-		</tbody>
-	</table>
+		<% end -%>
+	</tbody>
+</table>
 
-	<%= will_paginate @occurrences %>
-</p>
+<%= will_paginate @occurrences %>
+
