@@ -36,6 +36,7 @@ gem 'devise'
 gem 'rest-client'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sidekiq'
+gem 'sidetiq'
 gem 'sinatra', require: false
 gem 'slim'
 gem 'will_paginate'
