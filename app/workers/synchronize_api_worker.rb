@@ -1,6 +1,8 @@
 class SynchronizeApiWorker
 	require 'rest-client'
 	include Sidekiq::Worker
+
+	sidekiq_options queue: 'default'
 	
 	def perform
 
@@ -25,7 +27,7 @@ class SynchronizeApiWorker
 						occurrence.twitter_user = user
 						occurrence.content = status[:text]
 						occurrence.retweet_count = status[:retweet_count]
-						occurrence.favourites_count = status[:favourites_count]
+						occurrence.favourites_count = status[:favourites_count].to_i
 						occurrence.tweet_created_at = status[:created_at]
 						occurrence.twitter_user.retweets_count += status[:retweet_count]
 
@@ -33,6 +35,6 @@ class SynchronizeApiWorker
 					end			
 				end				
 			end
-		end		
+		end
 	end	
 end

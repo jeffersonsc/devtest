@@ -1,0 +1,31 @@
+<h1>Detalhes</h1>
+<p>
+	<table>
+		<tbody>
+			<tr>
+				<td>Nome:</td>
+				<td><%= @occurrence.twitter_user.name %></td>
+			</tr>
+			<tr>
+				<td>Apelido:</td>
+				<td><%= @occurrence.twitter_user.screen_name %></td>
+			</tr>
+			<tr>
+				<td>Seguidores:</td>
+				<td><%= @occurrence.twitter_user.followers %></td>
+			</tr>
+			<tr>
+				<td>Menssagem:</td>
+				<td><%= @occurrence.content %></td>
+			</tr>
+			<tr>
+				<td>Favoritos</td>
+				<td><%= @occurrence.favourites_count %></td>
+			</tr>
+			<tr>
+				<td>Postado em</td>
+				<td><%= t(@occurrence.tweet_created_at, :long) %></td>
+			</tr>
+		</tbody>
+	</table>
+</p>

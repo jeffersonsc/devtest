@@ -1,0 +1,28 @@
+<h1>Ocorreências</h1>
+
+<p>
+	<table>
+		<thead>
+			<tr>
+				<th>Usuário</th>
+				<th>Seguidores</th>
+				<th>Mensagem</th>
+				<th>Horário</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @occurrences.each do |occurrence| %>
+				<tr>
+					<td title="<%= occurrence.twitter_user.name %>"><%= link_to occurrence.twitter_user.screen_name , twitter_link(occurrence.twitter_user.screen_name), target: '_blank' %></td>
+					<td><%= occurrence.twitter_user.followers %></td>
+					<td><%= occurrence.content %></td>
+					<td><%= t(occurrence.tweet_created_at, :long) %></td>
+					<td><%= link_to "Exibir", occurrence %></td>
+				</tr>
+			<% end -%>
+		</tbody>
+	</table>
+
+	<%= will_paginate @occurrences %>
+</p>
