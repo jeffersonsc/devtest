@@ -17,7 +17,7 @@
 				<td title="<%= occurrence.twitter_user.name %>"><%= link_to occurrence.twitter_user.screen_name , twitter_link(occurrence.twitter_user.screen_name), target: '_blank' %></td>
 				<td><%= occurrence.twitter_user.followers %></td>
 				<td><%= occurrence.content %></td>
-				<td><%= link_to t(occurrence.tweet_created_at, :long), tweet_link(occurrence.twitter_user.screen_name, occurrence.tweet_id), target: '_blank' %></td>
+				<td><%= link_to l(occurrence.tweet_created_at, :long), tweet_link(occurrence.twitter_user.screen_name, occurrence.tweet_id), target: '_blank' %></td>
 				<td><%= link_to "Detalhes", occurrence %></td>
 			</tr>
 		<% end -%>
