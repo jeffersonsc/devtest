@@ -53,6 +53,7 @@ group :test do
   gem 'database_cleaner'  
   gem 'rspec-sidekiq'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'warden-rspec-rails'
 end
 
 group :development do
