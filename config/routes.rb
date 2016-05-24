@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
   require 'sidekiq/web'
   
-  
+  resources :occurrences, only: [:index, :show]
+  resources :users
+
   #Set default routes
   root to: 'occurrences#index'
-
-  resources :occurrences, only: [:index, :show]
-
-
   mount Sidekiq::Web, at: '/sidekiq'
 end
