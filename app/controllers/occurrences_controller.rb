@@ -1,5 +1,6 @@
 class OccurrencesController < ApplicationController
   before_action :set_occurence, only: [:show]
+  before_action :authenticate_user!
 
   def index
   	@occurrences = Occurrence.all.sort_by{|o| o.twitter_user.followers}.reverse.paginate(:page => params[:page], :per_page => 30)
