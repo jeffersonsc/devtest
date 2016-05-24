@@ -6,6 +6,14 @@
 			<tr>
 				<th>Nome</th>
 				<td><%= @user.name %></td>
+			<tr>
+			<tr>
+				<th>Email</th>
+				<td><%= @user.email %></td>
+			</tr>
+			<tr>
+				<th>Criado em</th>
+				<td><%= l @user.created_at, :long %></td>
 			</tr>
 		</tbody>
 	</table>
