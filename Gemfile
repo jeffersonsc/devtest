@@ -44,11 +44,11 @@ gem 'simple_form'
 
 group :development, :test do
   gem 'ffaker'
+  gem 'factory_girl_rails'
 end
 
 group :test do
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
   gem 'capybara'
   gem 'database_cleaner'  
   gem 'rspec-sidekiq'
