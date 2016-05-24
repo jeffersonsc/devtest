@@ -3,7 +3,7 @@ class OccurrencesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-  	@occurrences = Occurrence.all.sort_by{|o| o.twitter_user.followers}.reverse.paginate(:page => params[:page], :per_page => 30)
+  	@occurrences = Occurrence.group(:twitter_user_id, :id).sort_by {|o| o.twitter_user.followers}.reverse.paginate(:page => params[:page], :per_page => 30)
   end
 
   def show
