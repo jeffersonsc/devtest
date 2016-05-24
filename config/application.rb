@@ -27,7 +27,8 @@ module DevtestLocaweb
     config.generators do |g|
       g.test_framework :rspec, fixture: true
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
-      g.view_specs true
+      g.features true
+      g.view_specs false
       g.helper_specs true
       g.stylesheets = false
       g.javascripts = false

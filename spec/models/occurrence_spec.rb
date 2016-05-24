@@ -6,4 +6,8 @@ RSpec.describe Occurrence, type: :model do
   	it {should validate_presence_of(:content)}
   	it {should validate_presence_of(:tweet_created_at)}
   end
+
+  describe "Valid assocition" do
+  	it {should belong_to(:twitter_user)}
+  end
 end
