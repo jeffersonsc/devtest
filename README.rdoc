@@ -1,27 +1,38 @@
-== README
+== DevTest
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Objetivo criar uma aplicação que consome de uma API do Twitter e lista os dados em uma tela ordenando por número de seguidores excluido todos tweets que for replies.
 
-Things you may want to cover:
+Para executar o projeto:
 
-* Ruby version
+* Ruby 2.2.2
 
-* System dependencies
+* Rails 4.2.6
 
-* Configuration
+* PostgreSQL 9.4.*
 
-* Database creation
+* Redis [Redis](http://redis.io/topics/quickstart)
 
-* Database initialization
+* Clone a aplicação git clone https://github.com/jeffersonsc/devtest.git
 
-* How to run the test suite
+* Execute o comando bundle install
 
-* Services (job queues, cache servers, search engines, etc.)
+* Configure o arquivo config/database.yml para seu ambiente
 
-* Deployment instructions
+* Crie o banco de dados 'rake db:create' 
 
-* ...
+* Crie as tabelas com o comando 'rake db:migrate'
+
+* Execute o comando 'rake db:seed'
+
+* Execute os teste 'bundle exec rspec'
+
+* Em uma guia execute o redis 'redis-server'
+
+* Em uam nova guia execute o 'bundle exec sidekiq' #Esse comando é responsável por sincronizar a api
+
+* Execute em uma nova guia o comando 'rails s' para executar o servidor
+
+* Para logar email admin@example.com e senha 12345678
 
 
 Please feel free to use a different markup language if you do not plan to run
