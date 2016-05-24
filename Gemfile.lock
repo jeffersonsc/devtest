@@ -208,6 +208,9 @@ GEM
       celluloid (>= 0.17.3)
       ice_cube (~> 0.13.2)
       sidekiq (>= 4.0.0)
+    simple_form (3.2.1)
+      actionpack (> 4, < 5.1)
+      activemodel (> 4, < 5.1)
     sinatra (1.4.7)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -273,6 +276,7 @@ DEPENDENCIES
   shoulda-matchers (~> 3.1)
   sidekiq
   sidetiq
+  simple_form
   sinatra
   slim
   spring

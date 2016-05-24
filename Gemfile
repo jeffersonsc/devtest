@@ -40,13 +40,17 @@ gem 'sidetiq'
 gem 'sinatra', require: false
 gem 'slim'
 gem 'will_paginate'
+gem 'simple_form'
+
+group :development, :test do
+  gem 'ffaker'
+end
 
 group :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'capybara'
-  gem 'database_cleaner'
-  gem 'ffaker'
+  gem 'database_cleaner'  
   gem 'rspec-sidekiq'
   gem 'shoulda-matchers', '~> 3.1'
 end
