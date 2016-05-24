@@ -27,7 +27,6 @@ RSpec.describe OccurrencesController, type: :controller do
     it { expect(response).to have_http_status(:success) }
     it { expect(response).to render_template(:show) }
     it { expect(assigns[:occurrence][:content]).to include(occurrence.content) }
-    end
   end
 
 end
