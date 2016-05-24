@@ -12,25 +12,25 @@ Para executar o projeto:
 
 * Redis [Redis](http://redis.io/topics/quickstart)
 
-* Clone a aplicação git clone https://github.com/jeffersonsc/devtest.git
+* Clone a aplicação <tt>git clone https://github.com/jeffersonsc/devtest.git</tt>
 
 * Execute o comando bundle install
 
 * Configure o arquivo config/database.yml para seu ambiente
 
-* Crie o banco de dados 'rake db:create' 
+* Crie o banco de dados <tt>rake db:create</tt> 
 
-* Crie as tabelas com o comando 'rake db:migrate'
+* Crie as tabelas com o comando <tt>rake db:migrate</tt>
 
-* Execute o comando 'rake db:seed'
+* Execute o comando <tt>rake db:seed</tt>
 
-* Execute os teste 'bundle exec rspec'
+* Execute os teste <tt>bundle exec rspec</tt>
 
-* Em uma guia execute o redis 'redis-server'
+* Em uma guia execute o redis <tt>redis-server</tt>
 
-* Em uam nova guia execute o 'bundle exec sidekiq' #Esse comando é responsável por sincronizar a api
+* Em uam nova guia execute o <tt>bundle exec sidekiq</tt> #Esse comando é responsável por sincronizar a api
 
-* Execute em uma nova guia o comando 'rails s' para executar o servidor
+* Execute em uma nova guia o comando <tt>rails s</tt> para executar o servidor
 
 * Para logar email admin@example.com e senha 12345678
 
